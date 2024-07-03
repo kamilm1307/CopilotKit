@@ -3,7 +3,6 @@ import { ReactNode } from "react";
 /**
  * Props for CopilotKit.
  */
-
 export interface CopilotKitProps {
   /**
    * Your Copilot Cloud API key.
@@ -82,4 +81,10 @@ export interface CopilotKitProps {
    * in the case of cross-origin requests.
    */
   credentials?: RequestCredentials;
+
+  /**
+   * Indicates whether you want to use this particular list of properties to receive values
+   * from the graphql backend
+   */
+  properties?: Record<string, any>;
 }
