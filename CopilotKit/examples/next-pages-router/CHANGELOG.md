@@ -1,5 +1,41 @@
 # next-pages-router
 
+## 1.1.1-atai-0724-athena-fix.2
+
+### Patch Changes
+
+- remove unnecessary logging
+- Updated dependencies
+  - @copilotkit/react-textarea@1.1.1-atai-0724-athena-fix.2
+  - @copilotkit/react-core@1.1.1-atai-0724-athena-fix.2
+  - @copilotkit/react-ui@1.1.1-atai-0724-athena-fix.2
+  - @copilotkit/runtime@1.1.1-atai-0724-athena-fix.2
+  - @copilotkit/shared@1.1.1-atai-0724-athena-fix.2
+
+## 1.1.1-atai-0724-athena-fix.1
+
+### Patch Changes
+
+- state-abuse resistance for useCopilotChat
+- Updated dependencies
+  - @copilotkit/react-textarea@1.1.1-atai-0724-athena-fix.1
+  - @copilotkit/react-core@1.1.1-atai-0724-athena-fix.1
+  - @copilotkit/react-ui@1.1.1-atai-0724-athena-fix.1
+  - @copilotkit/runtime@1.1.1-atai-0724-athena-fix.1
+  - @copilotkit/shared@1.1.1-atai-0724-athena-fix.1
+
+## 1.1.1-atai-0724-athena-fix.0
+
+### Patch Changes
+
+- appendMessage fix 1
+- Updated dependencies
+  - @copilotkit/react-textarea@1.1.1-atai-0724-athena-fix.0
+  - @copilotkit/react-core@1.1.1-atai-0724-athena-fix.0
+  - @copilotkit/react-ui@1.1.1-atai-0724-athena-fix.0
+  - @copilotkit/runtime@1.1.1-atai-0724-athena-fix.0
+  - @copilotkit/shared@1.1.1-atai-0724-athena-fix.0
+
 ## 1.1.0
 
 ### Minor Changes
