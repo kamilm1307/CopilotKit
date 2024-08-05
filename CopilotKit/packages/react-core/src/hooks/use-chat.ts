@@ -128,7 +128,7 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
     const abortController = new AbortController();
     abortControllerRef.current = abortController;
 
-    setMessages([...previousMessages, ...newMessages]);
+    setMessages((prevMessages) => [...prevMessages, ...newMessages]);
 
     const systemMessage = makeSystemMessageCallback();
 
@@ -255,7 +255,18 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
         }
 
         if (newMessages.length > 0) {
-          setMessages([...previousMessages, ...newMessages]);
+          setMessages((prevMessages) => {
+            const prevMessagesList = prevMessages;
+            // Since we are streaming, the last message (by the assistant) needs to be constantly replaced
+            if (
+              (prevMessages[prevMessages.length - 1] as TextMessage | undefined)?.role ===
+              "assistant"
+            ) {
+              prevMessagesList.pop();
+            }
+
+            return [...prevMessagesList, ...newMessages];
+          });
         }
       }
 
@@ -288,9 +299,9 @@ export function useChat(options: UseChatOptions): UseChatHelpers {
     if (isLoading) {
       return;
     }
-    const newMessages = [...messages, message];
-    setMessages(newMessages);
-    return runChatCompletionAndHandleFunctionCall(newMessages);
+    setMessages((prevMessages) => [...prevMessages, message]);
+    // No need to pass new messages here. runChatCompletion uses setState (setMessages) which takes it from prev state
+    return runChatCompletionAndHandleFunctionCall([]);
   };
 
   const reload = async (): Promise<void> => {
